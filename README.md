@@ -26,3 +26,5 @@ python sr_study.py
 - `delete <id>`
 
 
+## Demo
+<video controls width="640" src="https://github.com/user-attachments/assets/YOUR_VIDEO_ID.mp4"></video>
