@@ -24,3 +24,7 @@ python sr_study.py
 - `review`
 - `stats`
 - `delete <id>`
+
+## Demo
+
+[![Watch the demo video](https://img.youtube.com/vi/IXmbGOqe9lw/0.jpg)](https://youtu.be/IXmbGOqe9lw)
