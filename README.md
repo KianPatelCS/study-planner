@@ -1,0 +1,24 @@
+# Study Planner (Python CLI)
+
+A minimal command-line study planner using a simple spaced-repetition scheduler.
+
+## Features
+- Add/list review cards with tags
+- Review loop with 0–5 grading
+- JSON storage (local only)
+- Basic stats
+- Tests with pytest
+
+## Quick Start
+```bash
+python -m venv .venv
+.venv\Scripts\activate
+pip install -r requirements.txt
+python sr_study.py
+```
+
+## Commands
+- `add`
+- `list [tag]`
+- `review`
+- `stats`
