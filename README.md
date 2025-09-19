@@ -7,6 +7,7 @@ A minimal command-line study planner using a simple spaced-repetition scheduler.
 - Review loop with 0–5 grading
 - JSON storage (local only)
 - Basic stats
+- Delete cards by ID
 - Tests with pytest
 
 ## Quick Start
@@ -22,3 +23,4 @@ python sr_study.py
 - `list [tag]`
 - `review`
 - `stats`
+- `delete <id>`

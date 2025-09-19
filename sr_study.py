@@ -4,7 +4,6 @@ from datetime import datetime, timedelta
 from typing import List, Dict, Optional
 
 DATA_FILE = "cards.json"
-REVIEWS_FILE = "reviews.json"
 DATE_FMT = "%Y-%m-%d"
 
 @dataclass
@@ -97,13 +96,24 @@ def stats():
     due = sum(1 for c in cards if c.due <= today_str())
     print(f"Total: {len(cards)} | Due: {due}")
 
+def delete_card(card_id: int):
+    cards = load_cards()
+    new_cards = [c for c in cards if c.id != card_id]
+    if len(new_cards) == len(cards):
+        print(f"No card found with ID {card_id}")
+    else:
+        save_cards(new_cards)
+        print(f"Deleted card #{card_id}")
+
 def help_menu():
-    print("""Commands:
-  add
-  list [tag]
-  review
-  stats
-  exit""")
+    print("Commands:\n"
+          "  add\n"
+          "  list [tag]\n"
+          "  review\n"
+          "  stats\n"
+          "  delete <id>\n"
+          "  help\n"
+          "  exit")
 
 def main():
     print("Study Planner CLI")
@@ -122,6 +132,11 @@ def main():
             review_loop()
         elif cmd[0] == "stats":
             stats()
+        elif cmd[0] == "delete":
+            if len(cmd) < 2 or not cmd[1].isdigit():
+                print("Usage: delete <id>")
+            else:
+                delete_card(int(cmd[1]))
         elif cmd[0] == "help":
             help_menu()
         elif cmd[0] == "exit":
